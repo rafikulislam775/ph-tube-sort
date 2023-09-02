@@ -6,15 +6,12 @@ const loadData = async () => {
     const mainData = await response.json();
     const data = mainData.data;
     // console.log(data);
-
+    // tab container
     const tabContainer = document.getElementById("tab-container");
     data.forEach((x) => {
-      // tab container
       const div = document.createElement("div");
       div.innerHTML = `
-      <a onclick="getData('${x.category_id}')" class="tab hover:bg-red-500 hover:text-white rounded-sm">${x.category}</a>
-      
-      `;
+      <a onclick="getData('${x.category_id}')" class="tab hover:bg-red-500 hover:text-white rounded-sm">${x.category}</a>`;
       tabContainer.appendChild(div);
     });
   } catch (error) {
@@ -29,12 +26,12 @@ const getData = async (id) => {
     );
     const mainData = await response.json();
     const data = mainData.data;
-
-    console.log(data);
+    // Sort the data by views in descending order
+    // console.log(data);
     const cardContainer = document.getElementById("card-container");
     cardContainer.innerHTML = ""; // Clear previous cards
     const emptyContainer = document.getElementById("empty-container");
-    emptyContainer.innerHTML = ""; // Clear
+    emptyContainer.innerHTML = ""; // Clear previous data
     if (data.length === 0) {
       const div = document.createElement("div");
       div.innerHTML = `

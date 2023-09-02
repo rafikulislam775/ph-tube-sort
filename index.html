@@ -23,7 +23,9 @@
           </div>
         </div>
         <div class="navbar-center">
-          <button class="btn btn-sm bg-gray-300">Sort by view</button>
+          <button id="sort-button" class="btn btn-sm bg-gray-300">
+            Sort by view
+          </button>
         </div>
         <div class="navbar-end">
           <button class="btn btn-sm bg-red-500 text-white">
@@ -36,7 +38,7 @@
     <!-- dynamic-content -->
     <main>
       <!-- tab section -->
-      <section >
+      <section>
         <div
           id="tab-container"
           class="tabs flex justify-center items-center mb-5"
@@ -50,13 +52,10 @@
         ></div>
       </section>
       <!-- empty content -->
-      <section class="container m-auto  " id="empty-container"></section>
+      <section class="container m-auto" id="empty-container"></section>
+      <!-- sort container -->
+      <section id="sort-container"></section>
     </main>
-    
-      
-      
-    
-    
 
     <!--adding  script  file-->
     <script src="./js/script.js"></script>
