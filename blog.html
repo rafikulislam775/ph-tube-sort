@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BLOG</title>
+    <link rel="shortcut icon" href="./logo/Logo.png" type="image/x-icon" />
+    <!-- adding tail-wind-css and daisy UI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="container m-auto">
+    <section>
+      <div class="w-full border-opacity-50">
+        <div
+          class="grid h-20 card bg-base-300 rounded-box place-items-center text-3xl"
+        >
+          Let's discuss the scope of "var" "let" and "const"! <br />
+          <h2 class="text-sm">
+            First of all, we use var, let, and const for defining variables that
+            contain the values!!
+          </h2>
+        </div>
+      </div>
+      <div class="text-center my-4">
+        <h1 class="text-3xl">What is scope of variable in JavaScript?</h1>
+        <p>
+          JavaScript variables have only two scopes. Global Variables A global
+          variable has global scope which means it can be defined anywhere in
+          your JavaScript code. Local Variables A local variable will be visible
+          only within a function where it is defined. Function parameters are
+          always local to that function.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div
+        class="container m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+      >
+        <div class="card w-96 bg-base-100 shadow-xl object-cover">
+          <figure>
+            <img
+              src="./logo/code-var.png"
+              class="rounded-xl h-52 w-full object-cover object-center"
+              alt="var"
+            />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Scope of var</h2>
+            <p>
+              Variables declared with var have function or global scope. This
+              means they are accessible throughout the entire function or even
+              globally if declared outside of any function. Let's take a closer
+              look at the scope of var with an example:
+            </p>
+          </div>
+        </div>
+        <div class="card w-96 bg-base-100 shadow-xl object-cover">
+          <figure>
+            <img
+              src="./logo/let.png"
+              class="rounded-xl h-52 w-full object-cover object-center"
+              alt="var"
+            />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Scope of let</h2>
+            <p>
+              Variables declared with let have block scope. This means they are
+              only accessible within the block where they are defined, which
+              could be a loop, a conditional statement, or any code enclosed
+              within curly braces.
+            </p>
+          </div>
+        </div>
+        <div class="card w-96 bg-base-100 shadow-xl object-cover">
+          <figure>
+            <img
+              src="./logo/const.png"
+              class="rounded-xl h-52 w-full object-cover object-center"
+              alt="var"
+            />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Scope of const</h2>
+            <p>
+              Variables declared with const have block scope, similar to let.
+              They are only accessible within the block where they are defined.
+              However, const variables come with an additional constraint: their
+              value cannot be reassigned after initial assignment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="text-center my-4">
+        <h1 class="text-3xl">
+          Understanding the Use Cases of null and undefined in JavaScript
+        </h1>
+        <p>
+          In JavaScript, both null and undefined are special values used to
+          indicate the absence or unavailability of a meaningful value in
+          variables. However, they serve slightly different purposes and have
+          specific use cases.
+        </p>
+      </div>
+      <div class="flex items-center justify-center">
+        <div class="card flex-1 bg-base-100 shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">null</h2>
+            <p>
+              null is typically used when you want to explicitly indicate that a
+              variable should have no value or should be empty.
+            </p>
+          </div>
+        </div>
+        <div class="card flex-1 bg-base-100 shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">undefined</h2>
+            <p>
+              undefined is often automatically assigned to a variable in
+              JavaScript under certain circumstances. It indicates that a
+              variable has been declared but not yet assigned a value or that a
+              value is absent.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center my-10">
+        <h1 class="text-3xl">Let's explain REST API</h1>
+        <p>
+          A REST API, which stands for Representational State Transfer
+          Application Programming Interface, is a set of architectural
+          principles and conventions for designing web services. It is not a
+          protocol or standard but rather a style of building web applications
+          and services. <br />
+          <br />
+          REST APIs provide also a standardized way for clients (such as web
+          browsers or mobile apps) to communicate with servers over the
+          internet. They are essential for building scalable, maintainable, and
+          interoperable web services that can be easily integrated into various
+          applications and platforms.
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
