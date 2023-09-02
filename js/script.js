@@ -38,9 +38,9 @@ const getData = async (id) => {
     if (data.length === 0) {
       const div = document.createElement("div");
       div.innerHTML = `
-      <div class="hero  min-h-screen bg-base-200">
-      <div class="hero-content text-center">
-        <div class="max-w-md">
+      <div class="hero  min-h-fit  bg-base-200">
+      <div class="hero-content  text-center">
+        <div class="max-w-md ">
           <img src="./logo/Icon.png" alt="" class="pl-20" />
           <p class="py-6 text-3xl font-bold">
             Oops!! Sorry, There is no <br />
@@ -53,16 +53,27 @@ const getData = async (id) => {
       emptyContainer.appendChild(div);
     } else {
       data.forEach((x) => {
+        // converting strings seconds to hours and minutes
+        const seconds = parseInt(x.others.posted_date);
+        const hours = Math.floor(seconds / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
+
         const div = document.createElement("div");
         div.innerHTML = `
          <div class="card  bg-base-100 shadow-xl">
-            <figure>
+          <div class="relative">
+              <figure>
               <img
                 src="${x.thumbnail}"
                 alt="picture"
                 class ="rounded-xl h-52 w-full object-cover object-center"
               />
-            </figure>
+              </figure>
+              <div class="absolute p-2 rounded-xl text-white bottom-5 right-4
+               ${x.others.posted_date ? "bg-black" : ""}">
+               ${x.others.posted_date ? `${hours} hrs ${minutes} min ago` : ""}
+              </div>
+            </div>        
             <div class="card-body">
               <div class="avatar gap-4">
                 <div class="w-10  rounded-full">
@@ -76,7 +87,7 @@ const getData = async (id) => {
               <div class="flex gap-2">
                     <div><p>${x.authors[0].profile_name}</p></div>
                     <div> ${
-                      x.authors[0].verified === true
+                      x.authors[0].verified
                         ? `<img src="./logo/tik.png" alt="Verified Image">`
                         : " "
                     }</div>
