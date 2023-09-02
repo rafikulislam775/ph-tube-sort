@@ -31,12 +31,30 @@ const getData = async (id) => {
     const data = mainData.data;
 
     console.log(data);
-
     const cardContainer = document.getElementById("card-container");
     cardContainer.innerHTML = ""; // Clear previous cards
-    data.forEach((x) => {
+    const emptyContainer = document.getElementById("empty-container");
+    emptyContainer.innerHTML = ""; // Clear
+    if (data.length === 0) {
       const div = document.createElement("div");
       div.innerHTML = `
+      <div class="hero  min-h-screen bg-base-200">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <img src="./logo/Icon.png" alt="" class="pl-20" />
+          <p class="py-6 text-3xl font-bold">
+            Oops!! Sorry, There is no <br />
+            content here
+          </p>
+        </div>
+      </div>
+    </div>
+      `;
+      emptyContainer.appendChild(div);
+    } else {
+      data.forEach((x) => {
+        const div = document.createElement("div");
+        div.innerHTML = `
          <div class="card  bg-base-100 shadow-xl">
             <figure>
               <img
@@ -62,16 +80,15 @@ const getData = async (id) => {
                         ? `<img src="./logo/tik.png" alt="Verified Image">`
                         : " "
                     }</div>
-
-              </div>
-                
+              </div>                
                 <p>${x.others.views}</p>
               </div>
             </div>
           </div>
         `;
-      cardContainer.appendChild(div);
-    });
+        cardContainer.appendChild(div);
+      });
+    }
   } catch (error) {
     console.error("Error fetching categories:", error);
   }
@@ -79,4 +96,4 @@ const getData = async (id) => {
 
 loadData();
 // for default all displaying
-getData("1001");
+getData("1000");
