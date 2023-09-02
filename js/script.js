@@ -41,7 +41,8 @@ const getData = async (id) => {
             <figure>
               <img
                 src="${x.thumbnail}"
-                alt="Shoes"
+                alt="picture"
+                class ="rounded-xl h-52 w-full object-cover object-center"
               />
             </figure>
             <div class="card-body">
@@ -54,7 +55,16 @@ const getData = async (id) => {
                 <h2 class="card-title">${x.title}</h2>
               </div>
               <div class="ml-14">
-                <p>${x.authors[0].profile_name}</p>
+              <div class="flex gap-2">
+                    <div><p>${x.authors[0].profile_name}</p></div>
+                    <div> ${
+                      x.authors[0].verified === true
+                        ? `<img src="./logo/tik.png" alt="Verified Image">`
+                        : " "
+                    }</div>
+
+              </div>
+                
                 <p>${x.others.views}</p>
               </div>
             </div>
